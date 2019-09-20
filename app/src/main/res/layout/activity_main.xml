@@ -4,42 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.MainActivity"
-    android:orientation="vertical"
     android:background="@color/grey_200"
+    android:orientation="vertical"
     android:paddingTop="16dp"
     android:paddingBottom="16dp"
-    >
+    tools:context=".ui.main.MainActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:orientation="vertical"
         android:paddingTop="16dp"
-        android:paddingBottom="16dp"
-        >
+        android:paddingBottom="16dp">
+
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_keywords"
-            android:textSize="20sp"
-            android:textColor="@color/black"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginBottom="16dp"
+            android:text="@string/title_keywords"
+            android:textColor="@color/black"
+            android:textSize="20sp"
 
             />
+
         <HorizontalScrollView
             android:id="@+id/keywordsContainer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:paddingTop="16dp"
             android:paddingBottom="16dp">
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.tiki.hometest.ui.views.KeywordView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <com.tiki.hometest.ui.views.KeywordView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
         </HorizontalScrollView>
     </LinearLayout>
-
-
 
 
 </LinearLayout>
