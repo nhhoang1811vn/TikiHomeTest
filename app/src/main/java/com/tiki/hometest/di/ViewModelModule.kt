@@ -15,7 +15,9 @@
  */
 
 package com.tiki.hometest.di
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.tiki.hometest.ui.main.MainViewModel
 import com.tiki.hometest.viewmodel.ViewModelFactory
 
 import dagger.Binds
@@ -25,10 +27,10 @@ import dagger.multibindings.IntoMap
 @Suppress("unused")
 @Module
 abstract class ViewModelModule {
-    /*@Binds
+    @Binds
     @IntoMap
-    @ViewModelKey(UserViewModel::class)
-    abstract fun bindUserViewModel(userViewModel: UserViewModel): ViewModel*/
+    @ViewModelKey(MainViewModel::class)
+    abstract fun bindMainViewModel(userViewModel: MainViewModel): ViewModel
 
 
 

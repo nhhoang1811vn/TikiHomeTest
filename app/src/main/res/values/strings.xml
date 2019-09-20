@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">HomeTest</string>
     <string name="title_keywords">Từ khóa hot</string>
+
+    <string name="retry">Retry</string>
+    <string name="unknown_error">Unknown Error</string>
 </resources>

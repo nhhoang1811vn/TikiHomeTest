@@ -18,6 +18,8 @@ package com.tiki.hometest.di
 
 
 import com.tiki.hometest.api.GithubUserContentService
+import com.tiki.hometest.repository.AppService
+import com.tiki.hometest.repository.AppServiceIpm
 import com.tiki.hometest.util.LiveDataCallAdapterFactory
 import dagger.Module
 import dagger.Provides
@@ -36,5 +38,10 @@ class AppModule {
             .addCallAdapterFactory(LiveDataCallAdapterFactory())
             .build()
             .create(GithubUserContentService::class.java)
+    }
+    @Singleton
+    @Provides
+    fun provideAppService(githubService: GithubUserContentService) : AppService{
+        return AppServiceIpm(githubService)
     }
 }
