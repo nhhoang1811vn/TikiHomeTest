@@ -1,7 +1,8 @@
-package com.tiki.hometest
+package com.tiki.hometest.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.tiki.hometest.R
 
 class MainActivity : AppCompatActivity() {
 
