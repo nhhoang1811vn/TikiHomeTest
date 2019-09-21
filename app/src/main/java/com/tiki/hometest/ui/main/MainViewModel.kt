@@ -22,15 +22,19 @@ class MainViewModel @Inject constructor(appService: AppService) : ViewModel() {
     }
 
     val keyword : LiveData<Resource<List<Keyword>>> = Transformations.map(_keywords){
-        val data = mutableListOf<Keyword>()
-        it.data?.forEach {
-            val text = Utils.getKeywordString(it)
-            val random = Random()
-            val index = random.nextInt(keywordColors.size)
-            val color = keywordColors[index]
-            val keyword = Keyword(text,color)
-            data.add(keyword)
+        var data : MutableList<Keyword>?= null
+        if (it.data != null){
+            data = mutableListOf()
+            it.data.forEach {
+                val text = Utils.getKeywordString(it)
+                val random = Random()
+                val index = random.nextInt(keywordColors.size)
+                val color = keywordColors[index]
+                val keyword = Keyword(text,color)
+                data.add(keyword)
+            }
         }
+
         Resource(it.status, data, it.message)
     }
 

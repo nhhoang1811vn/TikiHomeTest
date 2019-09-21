@@ -42,21 +42,23 @@
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 />
-            <com.tiki.hometest.ui.views.KeywordContainerView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:data="@{keywords}"
-                />
-
-
-            <include
-                layout="@layout/loading_state"
-                app:resource="@{(Resource) keywords}"
-                app:callback="@{() -> callback.retry()}"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                />
+                android:layout_height="wrap_content">
+                <com.tiki.hometest.ui.views.KeywordContainerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:data="@{keywords}"
+                    />
+                <include
+                    layout="@layout/loading_state"
+                    app:resource="@{(Resource) keywords}"
+                    app:callback="@{() -> callback.retry()}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    />
+            </RelativeLayout>
         </LinearLayout>
 
 

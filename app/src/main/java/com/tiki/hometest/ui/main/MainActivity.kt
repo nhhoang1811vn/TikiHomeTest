@@ -28,7 +28,7 @@ class MainActivity : BaseBindActivity<ActivityMainBinding>(), Injectable {
         AndroidInjection.inject(this)
         mainViewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(MainViewModel::class.java)
-        mainViewModel.loadKeywords()
+
         binding.lifecycleOwner = this
         binding.keywords = mainViewModel.keyword
         binding.callback = object: RetryCallback{
@@ -37,5 +37,6 @@ class MainActivity : BaseBindActivity<ActivityMainBinding>(), Injectable {
             }
 
         }
+        mainViewModel.loadKeywords()
     }
 }
