@@ -7,13 +7,14 @@ import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.tiki.hometest.R
 import com.tiki.hometest.repository.AppService
+import com.tiki.hometest.testing.OpenForTesting
 import com.tiki.hometest.ui.Utils
 import com.tiki.hometest.vo.Keyword
 import com.tiki.hometest.vo.Resource
 import java.util.*
 import javax.inject.Inject
 import kotlin.math.abs
-
+@OpenForTesting
 class MainViewModel @Inject constructor(appService: AppService) : ViewModel() {
 
     private val _keywordInput = MutableLiveData<Boolean>()

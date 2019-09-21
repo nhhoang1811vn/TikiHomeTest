@@ -71,6 +71,9 @@ object AppInjector {
         if (activity is HasSupportFragmentInjector) {
             AndroidInjection.inject(activity)
         }
+        if (activity is Injectable){
+            AndroidInjection.inject(activity)
+        }
         if (activity is FragmentActivity) {
             activity.supportFragmentManager
                 .registerFragmentLifecycleCallbacks(
