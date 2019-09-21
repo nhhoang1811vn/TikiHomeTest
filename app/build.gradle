@@ -23,6 +23,11 @@ android {
     dataBinding {
         enabled = true
     }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
 }
 ext {
     iconicsVersion = "4.0.1-b01"
@@ -42,7 +47,9 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'org.robolectric:robolectric:4.3'
     testImplementation 'junit:junit:4.12'
+    testImplementation 'androidx.test:core:1.0.0'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
